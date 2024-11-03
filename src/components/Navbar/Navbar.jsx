@@ -1,6 +1,7 @@
 import { TiThMenu } from "react-icons/ti";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -20,75 +21,56 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute left-0"
               >
                 <li>
-                  <a
-                    className="text-xl hover:font-bold hover:transition duration-300 hover:ease-in-out"
-                    href="#index.html"
-                  >
+                  <NavLink to={"/"} className="text-xl hover:font-bold hover:transition duration-300 hover:ease-in-out">
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor"
-                    href="#best-freind"
-                  >
+                  <NavLink to={"/statistics"} className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor">
                     Statistics
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor"
-                    href="#footer-section"
-                  >
+                  <NavLink to={"/dashboard"} className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor">
                     Dashboard
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
             <div className="navbar-start text-left">
-              <a className="flex items-center gap-2" href="index.html">
-                <span className="text-2xl md:text-3xl font-extrabold text-primaryTextColor">
+              <a className="flex items-center gap-2">
+                <span className="text-2xl font-bold ">
                   Gadget Heaven
                 </span>
               </a>
             </div>
-            <div className="navbar-center hidden lg:flex items-center mt-4">
+            <div className="navbar-center hidden lg:flex items-center mt-4 md:mt-0">
               <ul className="menu-options flex gap-8 font-medium">
                 <li>
-                  <a
-                    className="text-xl text-primaryTextColor hover:font-semibold hover:transition duration-300 ease-in-out"
-                    href="#index.html"
-                  >
+                  <NavLink to={"/"} className="text-lg hover:font-semibold hover:transition duration-300 ease-in-out">
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-semibold"
-                    href="#best-freind"
-                  >
+                  <NavLink to={"/statistics"} className="text-lg hover:transition duration-300 ease-in-out hover:font-semibold">
                     Statistics
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-semibold"
-                    href="#footer-section"
-                  >
+                  <NavLink to={"/dashboard"} className="text-lg hover:transition duration-300 ease-in-out hover:font-semibold">
                     Dashboard
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
-            <div className="navbar-end flex">
-              <div className="item gap-2 items-center">
-                <a href="#index.html">
+            <div className="navbar-end flex gap-3">
+              <div className="border-2 border-gray-200 p-3 rounded-full bg-white">
+                <a>
                   <AiOutlineShoppingCart className="text-2xl" />
                 </a>
               </div>
-              <div className="item gap-2 items-center">
-                <a href="#index.html">
-                  {/* <i className="fa-regular fa-user p-3 bg-primaryColor rounded-full border-2 border-solid border-userBorderColor hover:bg-userBorderColor"></i> */}
+              <div className="border-2 border-gray-200 p-3 rounded-full bg-white">
+                <a>
                   <FiHeart className="text-2xl" />
                 </a>
               </div>
