@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="bg-[#F6F6F6]">
             {/* Navbar */}
             <Navbar></Navbar>
             {/* Dynamic Sections */}
