@@ -17,7 +17,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-3xl w-10/12 mx-auto lg:p-6 p-3 border-solid relative bottom-48 z-10 ">
+        <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-3xl w-10/12 mx-auto lg:p-6 p-3 border-solid relative bottom-56 z-10 ">
           <div className="bg-bannerImage h-[36rem] bg-cover bg-center rounded-3xl">
             
           </div>
