@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const Gadget = ({ gadget }) => {
-    const { product_image, product_title, price } = gadget || {};
+    const { product_id, product_image, product_title, price } = gadget || {};
     return (
       <div>
         <div className="card shadow-xl p-6 bg-white">
@@ -18,11 +19,11 @@ const Gadget = ({ gadget }) => {
               By: {price}
             </p>
           </div>
-          <div className="mt-4">
+          <Link to={`/gadget/${product_id}`} className="mt-4">
             <button className="px-6 py-3 border-2 border-[#9538E2] text-[#9538E2] text-lg font-semibold bg-white rounded-full hover:bg-[#9538E2] hover:text-white">
               View Details
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     );

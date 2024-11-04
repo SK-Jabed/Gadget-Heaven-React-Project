@@ -1,0 +1,106 @@
+import { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import Heading from "../../components/Heading/Heading";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FiHeart } from "react-icons/fi";
+
+
+const GadgetDetails = () => {
+    const allGadgetsData = useLoaderData();
+    const { product_id } = useParams();
+    const [gadget, setGadget] = useState({});
+
+    const {
+      product_title,
+      product_image,
+      price,
+      description,
+      specification,
+      availability,
+      rating,
+      popularity
+    } = gadget;
+
+    useEffect(() => {
+      const singleData = allGadgetsData.find(
+        gadget => gadget.product_id === parseInt(product_id)
+      );
+      setGadget(singleData);
+    }, [allGadgetsData, product_id]);
+
+    return (
+      <div className="">
+        <div className=" bg-[#9538E2] pt-8 pb-60 w-full">
+          <div className="flex flex-col justify-center items-center text-white mb-8">
+            <Heading
+              title={"Product Details"}
+              subtitle={
+                "Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
+              }
+            ></Heading>
+          </div>
+        </div>
+
+        <div className="bg-[#ffffff] p-6 rounded-3xl w-10/12 mx-auto  relative bottom-56 z-10 ">
+          <div className="flex gap-8">
+            <div className=" bg-[#ECECEC] rounded-3xl w-[425px] h-[500px] p-6">
+              <img
+                className="w-[400px] h-[450px] rounded-3xl"
+                src={product_image}
+                alt={product_title}
+              />
+            </div>
+            <div className="">
+              <h2 className="text-3xl font-bold text-[#09080F]">
+                {product_title}
+              </h2>
+              <p className="text-lg font-semibold text-[#09080F80] mt-3">
+                Price: {price}
+              </p>
+              <p className="text-base font-semibold text-gray-500 mt-3">
+                <span className="font-bold text-black">
+                  `{availability} ? {"In stock"} : {"Out of stock"}`
+                </span>
+              </p>
+              <p className="text-lg font-normal text-[#09080F60] mt-3">
+                {description}
+              </p>
+              <div className="flex flex-col gap-2 mt-4">
+                <h2 className="text-lg font-bold mb-1">Specification:</h2>
+                <ol className="text-lg font-normal text-[#09080F70] ml-6">
+                  {specification &&
+                    specification.map((item, i) => (
+                      <li className="list-decimal" key={i}>
+                        {item}
+                      </li>
+                    ))}
+                </ol>
+              </div>
+              <h2 className="text-lg font-bold mb-1 mt-3">Rating:</h2>
+              <button className="text-black font-semibold px-4 py-2 rounded-full bg-[#09080F10]">
+                {rating}
+              </button>
+              <div className="flex items-center gap-4 mt-4">
+                <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] hover:border-2 hover:border-[#9538E2]">
+                  <button
+                    //   onClick={() => handleReadBtn(bookId)}
+                    className=" text-lg font-semibold"
+                  >
+                    Add To Cart
+                  </button>
+                  <AiOutlineShoppingCart className="text-2xl" />
+                </div>
+                <div className="border-2 border-gray-200 p-3 rounded-full bg-white">
+                  <a>
+                    <FiHeart className="text-2xl" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+};
+
+export default GadgetDetails;

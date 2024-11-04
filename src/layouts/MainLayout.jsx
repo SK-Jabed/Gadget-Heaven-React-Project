@@ -8,7 +8,7 @@ const MainLayout = () => {
       <div className="bg-[#F6F6F6]">
         {/* Navbar */}
         <Navbar></Navbar>
-        <div className="min-h-[calc(100vh-565px)] container mx-auto px-12">
+        <div className="min-h-[calc(100vh-565px)] ">
           {/* Dynamic Sections */}
           <Outlet></Outlet>
         </div>
