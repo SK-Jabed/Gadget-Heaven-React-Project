@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
+import { addToCart, getAllCartProducts } from "../../utility/localStorage";
 
 
 const GadgetDetails = () => {
@@ -27,6 +28,12 @@ const GadgetDetails = () => {
       );
       setGadget(singleData);
     }, [allGadgetsData, product_id]);
+
+
+    const handleAddToCart = (gadget) => {
+        addToCart(gadget)
+        // getAllCartProducts();
+    }
 
     return (
       <div className="">
@@ -85,7 +92,7 @@ const GadgetDetails = () => {
               <div className="flex items-center gap-4 mt-4">
                 <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] hover:border-2 hover:border-[#9538E2]">
                   <button
-                    //   onClick={() => handleReadBtn(bookId)}
+                      onClick={() => handleAddToCart(gadget)}
                     className=" text-lg font-semibold"
                   >
                     Add To Cart

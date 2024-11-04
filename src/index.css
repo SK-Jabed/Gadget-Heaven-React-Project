@@ -7,3 +7,10 @@
 body {
   font-family: "Sora", serif;
 }
+
+.toastBody {
+  font-family: "Sora", Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 1rem !important;
+  font-weight: bolder;
+}
