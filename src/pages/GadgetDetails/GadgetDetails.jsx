@@ -43,9 +43,9 @@ const GadgetDetails = () => {
 
         <div className="bg-[#ffffff] p-6 rounded-3xl w-10/12 mx-auto  relative bottom-56 z-10 ">
           <div className="flex gap-8">
-            <div className=" bg-[#ECECEC] rounded-3xl w-[425px] h-[500px] p-6">
+            <div className=" bg-[#ECECEC] rounded-3xl w-[425px] h-[516px] p-6">
               <img
-                className="w-[400px] h-[450px] rounded-3xl"
+                className="w-[400px] h-[466px] rounded-3xl"
                 src={product_image}
                 alt={product_title}
               />
@@ -57,12 +57,14 @@ const GadgetDetails = () => {
               <p className="text-lg font-semibold text-[#09080F80] mt-3">
                 Price: {price}
               </p>
-              <p className="text-base font-semibold text-gray-500 mt-3">
-                <span className="font-bold text-black">
-                  `{availability} ? {"In stock"} : {"Out of stock"}`
+              <p className="text-base font-semibold text-gray-500 mt-5">
+                <span className={availability ?
+                    "text-[#309C08] py-2 px-4 rounded-full bg-[#309C0820] border-2 border-[#309C08]" :
+                    "text-[#de1818] py-2 px-4 rounded-full bg-[#de181820] border-2 border-[#de1818]"}>
+                  {availability ? "In Stock" : "Out of Stock"}
                 </span>
               </p>
-              <p className="text-lg font-normal text-[#09080F60] mt-3">
+              <p className="text-lg font-normal text-[#09080F60] mt-5">
                 {description}
               </p>
               <div className="flex flex-col gap-2 mt-4">
