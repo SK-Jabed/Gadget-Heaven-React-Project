@@ -5,7 +5,6 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
 import {
   addToCart,
-  getAllCartProducts,
   addToWishList,
 } from "../../utility/localStorage";
 
@@ -23,7 +22,6 @@ const GadgetDetails = () => {
       specification,
       availability,
       rating,
-      popularity
     } = gadget;
 
     const [addedToWishList, setAddedToWishList] = useState(true);
