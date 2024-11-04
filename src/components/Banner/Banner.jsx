@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-      <div className="">
+      <div className="h-[1220px] md:h-[1120px]">
         <div className=" bg-[#9538E2] rounded-2xl pt-32 pb-64">
           <div className="flex flex-col justify-center items-center text-white">
             <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-center w-3/4">
