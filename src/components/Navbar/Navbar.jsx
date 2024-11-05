@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/" || pathname.startsWith("/cards");
 
   return (
     <div
