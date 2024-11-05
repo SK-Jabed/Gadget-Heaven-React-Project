@@ -40,7 +40,7 @@ const CartProduct = () => {
         <div className="flex items-center gap-4">
           <p className="font-bold text-xl">Total Cost: </p>
           <button onClick={handleSort} className="px-6 py-3 rounded-full border-2 border-[#8332C5] text-[#9538E2] font-bold">Sort by Price</button>
-          <button className="btn">Purchase</button>
+          <button className="px-7 py-[14px] rounded-full border-2 border-[#8332C5] text-white font-bold bg-violet-600">Purchase</button>
         </div>
       </div>
 
