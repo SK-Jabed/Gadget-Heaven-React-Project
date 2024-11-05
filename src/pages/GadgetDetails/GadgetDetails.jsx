@@ -105,7 +105,7 @@ const GadgetDetails = () => {
               </button>
               <div className="flex items-center gap-4 mt-4">
                 <div
-                  disabled={addedToWishList}
+                  
                   className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] hover:border-2 hover:border-[#9538E2]"
                 >
                   <button

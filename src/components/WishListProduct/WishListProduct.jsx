@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllWishListProducts } from "../../utility/localStorage";
 import { RxCrossCircled } from "react-icons/rx";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const WishListProduct = () => {
     const [gadgets, setGadgets] = useState([]);
@@ -45,13 +46,28 @@ const WishListProduct = () => {
                   </p>
                 </div>
               </div>
-              <div
-                
-                className=""
-              >
-                <button className="cursor-pointer">
+              <div className="flex flex-col items-center justify-center">
+                <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] hover:border-2 hover:border-[#9538E2] ">
+                  <button
+                    //   onClick={() => handleAddToCart(gadget)}
+                    className=" text-lg font-semibold"
+                  >
+                    Add To Cart
+                  </button>
+                  <AiOutlineShoppingCart className="text-2xl" />
+                </div>
+                <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] hover:border-2 hover:border-[#9538E2] ">
+                  <button
+                    //   onClick={() => handleAddToCart(gadget)}
+                    className=" text-lg font-semibold"
+                  >
+                    Add To Cart
+                  </button>
+                  <AiOutlineShoppingCart className="text-2xl" />
+                </div>
+                {/* <button className="cursor-pointer">
                   <RxCrossCircled className="text-4xl text-red-400 mr-10" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
