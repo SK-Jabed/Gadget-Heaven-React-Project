@@ -59,10 +59,10 @@ const GadgetDetails = () => {
         </div>
 
         <div className="bg-[#ffffff] p-6 rounded-3xl w-10/12 mx-auto  relative bottom-56 z-10 ">
-          <div className="flex gap-8">
-            <div className=" bg-[#ECECEC] rounded-3xl w-[425px] h-[516px] p-6">
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className=" bg-[#ECECEC] rounded-3xl lg:w-[425px] lg:h-[516px] p-6">
               <img
-                className="w-[400px] h-[466px] rounded-3xl"
+                className="w-full h-full lg:w-[400px] lg:h-[466px] rounded-3xl"
                 src={product_image}
                 alt={product_title}
               />

@@ -6,11 +6,9 @@ const getAllCartProducts = () => {
     
     if (allCartProducts) {
         const cartProduct = JSON.parse(allCartProducts);
-        console.log(cartProduct);
         return cartProduct;
     }
     else {
-        console.log([]);
         return [];
     }
 }
@@ -32,6 +30,17 @@ const addToCart = gadget => {
 
 
 // Remove a gadget from local storage
+const removeCartProduct = (id) => {
+    const cartProduct = getAllCartProducts();
+    const remainingProduct = cartProduct.filter(
+      (product) => product.product_id != id
+    );
+    console.log(remainingProduct);
+
+    localStorage.setItem("cartProduct", JSON.stringify(remainingProduct));
+    toast.success(`${id.product_title} Removed from Your Cart !!!`);
+
+}
 
 
 
@@ -44,7 +53,6 @@ const getAllWishListProducts = () => {
 
       return wishListProduct;
     } else {
-      console.log([]);
       return [];
     }
 }
@@ -65,4 +73,10 @@ const addToWishList = gadget => {
 }
 
 
-export { addToCart, getAllCartProducts, addToWishList, getAllWishListProducts };
+export {
+  addToCart,
+  getAllCartProducts,
+  addToWishList,
+  getAllWishListProducts,
+  removeCartProduct,
+};

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -13,7 +14,9 @@ const Banner = () => {
               next level. From smart devices to the coolest accessories, we have
               it all!
             </p>
+            <Link to={"/dashboard"}>
             <button className="px-7 py-3 bg-white rounded-full text-[#9538E2] text-lg font-bold">Shop Now</button>
+            </Link>
           </div>
         </div>
 

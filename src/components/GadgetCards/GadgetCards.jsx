@@ -7,6 +7,7 @@ const GadgetCards = () => {
     const data = useLoaderData();
     
     const { category } = useParams();
+    console.log(category);
     const [gadgets, setGadgets] = useState([]);
 
     useEffect(() => {
@@ -16,12 +17,14 @@ const GadgetCards = () => {
             );
             setGadgets(filteredByCategory);
         }
+        // else if (category === "Watches") {
+        //   setGadgets(data);
+        // }
         else {
-            setGadgets(data);
+          setGadgets(data.slice(0, 9));
         }
     }, [category, data]);
 
-    console.log(data);
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,9 +1,12 @@
 import { TiThMenu } from "react-icons/ti";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const { pathname } = useLocation();
+    // console.log(pathname);
+
     return (
       <div className="container w-11/12 mx-auto py-4 lg:py-8">
         <div className="navbar-content">
@@ -21,17 +24,26 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute left-0"
               >
                 <li>
-                  <NavLink to={"/"} className="text-xl hover:font-bold hover:transition duration-300 hover:ease-in-out">
+                  <NavLink
+                    to={"/"}
+                    className="text-xl hover:font-bold hover:transition duration-300 hover:ease-in-out"
+                  >
                     Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/statistics"} className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor">
+                  <NavLink
+                    to={"/statistics"}
+                    className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor"
+                  >
                     Statistics
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/dashboard"} className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor">
+                  <NavLink
+                    to={"/dashboard"}
+                    className="text-xl text-primaryTextColor hover:transition duration-300 ease-in-out hover:font-bold hover:primaryTextColor"
+                  >
                     Dashboard
                   </NavLink>
                 </li>
@@ -39,25 +51,32 @@ const Navbar = () => {
             </div>
             <div className="navbar-start text-left">
               <a className="flex items-center gap-2">
-                <span className="text-2xl font-bold ">
-                  Gadget Heaven
-                </span>
+                <span className="text-2xl font-bold ">Gadget Heaven</span>
               </a>
             </div>
             <div className="navbar-center hidden lg:flex items-center mt-4 md:mt-0">
               <ul className="menu-options flex gap-8 font-medium">
                 <li>
-                  <NavLink to={"/"} className="text-lg hover:font-semibold hover:transition duration-300 ease-in-out">
+                  <NavLink
+                    to={"/"}
+                    className="text-lg hover:font-semibold hover:transition duration-300 ease-in-out"
+                  >
                     Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/statistics"} className="text-lg hover:transition duration-300 ease-in-out hover:font-semibold">
+                  <NavLink
+                    to={"/statistics"}
+                    className="text-lg hover:transition duration-300 ease-in-out hover:font-semibold"
+                  >
                     Statistics
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/dashboard"} className="text-lg hover:transition duration-300 ease-in-out hover:font-semibold">
+                  <NavLink
+                    to={"/dashboard"}
+                    className="text-lg hover:transition duration-300 ease-in-out hover:font-semibold"
+                  >
                     Dashboard
                   </NavLink>
                 </li>
@@ -77,6 +96,12 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {       
+         pathname === "/" && (
+          <p>Loading</p>
+         )
+        }
       </div>
     );
 };
