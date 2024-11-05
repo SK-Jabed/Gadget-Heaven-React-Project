@@ -38,7 +38,7 @@ const CartProduct = () => {
           <h2 className="font-bold text-xl">Cart</h2>
         </div>
         <div className="flex items-center gap-4">
-          <p>Total Cost: </p>
+          <p className="font-bold text-xl">Total Cost: </p>
           <button onClick={handleSort} className="btn">Sort by Price</button>
           <button className="btn">Purchase</button>
         </div>
