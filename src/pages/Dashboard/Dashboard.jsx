@@ -41,16 +41,16 @@ const Dashboard = () => {
             ></Heading>
           </div>
           <div className="flex items-center gap-6 justify-center">
-            <NavLink>
-              <button onClick={() => handleIsActiveBtn("cart")} className="py-3 px-16 rounded-full bg-white text-[#9538E2] text-lg font-semibold">
+            {/* <NavLink> */}
+              <NavLink onClick={() => handleIsActiveBtn("cart")} className={({isActive}) => `${isActive ? "py-3 px-16 rounded-full bg-white text-[#9538E2] text-lg font-semibold" : "py-3 px-16 rounded-full text-white text-lg font-semibold border-2 border-white"}`}>
                 Cart
-              </button>
-            </NavLink>
-            <NavLink>
-              <button onClick={() => handleIsActiveBtn("wishlist")} className="py-3 px-16 rounded-full text-white text-lg font-semibold border-2 border-white">
+              </NavLink>
+            {/* </NavLink> */}
+            {/* <NavLink> */}
+              <NavLink onClick={() => handleIsActiveBtn("wishlist")} className={({isActive}) => `${isActive ? "py-3 px-16 rounded-full bg-white text-[#9538E2] text-lg font-semibold" : "py-3 px-16 rounded-full text-white text-lg font-semibold border-2 border-white"}`}>
                 Wishlist
-              </button>
-            </NavLink>
+              </NavLink>
+            {/* </NavLink> */}
           </div>
         </div>
 

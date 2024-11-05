@@ -13,18 +13,13 @@ const WishListProduct = () => {
 
     return (
       <div>
-        <h2>Wish List Product...</h2>
-
         <div className="container w-11/12 mx-auto flex items-center justify-between mt-12">
           <div>
             <h2>Wishlist</h2>
           </div>
-          <div className="flex items-center gap-4">
-            <button className="btn">Purchase</button>
-          </div>
         </div>
 
-        <div className="container w-11/12 mx-auto my-12">
+        <div className="container w-11/12 mx-auto mt-6 mb-16">
           {gadgets.map((gadget, idx) => (
             <div
               key={idx}

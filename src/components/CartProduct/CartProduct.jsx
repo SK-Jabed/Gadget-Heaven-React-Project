@@ -33,8 +33,6 @@ const CartProduct = () => {
 
   return (
     <div>
-      <h2>Cart product...</h2>
-
       <div className="container w-11/12 mx-auto flex items-center justify-between mt-12">
         <div>
           <h2>Cart</h2>
@@ -46,7 +44,7 @@ const CartProduct = () => {
         </div>
       </div>
 
-      <div className="container w-11/12 mx-auto my-12">
+      <div className="container w-11/12 mx-auto mt-6 mb-16">
         {gadgets.map((gadget, idx) => (
           <div
             key={idx}
