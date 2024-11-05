@@ -15,7 +15,7 @@ const WishListProduct = () => {
       <div>
         <div className="container w-11/12 mx-auto flex items-center justify-between mt-12">
           <div>
-            <h2>Wishlist</h2>
+            <h2 className="font-bold text-xl">Wishlist</h2>
           </div>
         </div>
 
