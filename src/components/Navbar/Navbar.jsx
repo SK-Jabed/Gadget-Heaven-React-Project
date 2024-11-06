@@ -49,6 +49,14 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
+                to="/products"
+                className={({ isActive }) => getLinkClasses(isActive)}
+              >
+                Products
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/statistics"
                 className={({ isActive }) => getLinkClasses(isActive)}
               >
@@ -88,6 +96,14 @@ const Navbar = () => {
                 className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/products"
+                className={({ isActive }) => getLinkClasses(isActive)}
+              >
+                Products
               </NavLink>
             </li>
             <li>

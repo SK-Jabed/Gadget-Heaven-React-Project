@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Gadget from "../Gadget/Gadget";
 import { useEffect, useState } from "react";
 
@@ -6,6 +6,8 @@ const GadgetCards = () => {
   const data = useLoaderData();
   const { category } = useParams();
   const [gadgets, setGadgets] = useState([]);
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     if (category) {
@@ -33,6 +35,11 @@ const GadgetCards = () => {
           ))}
         </div>
       )}
+        <div className="mt-6">     
+            <button className="btn btn-warning" onClick={() => navigate("/products")}>
+              View All
+            </button>
+        </div>
     </div>
   );
 };

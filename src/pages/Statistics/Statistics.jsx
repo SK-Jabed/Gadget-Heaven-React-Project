@@ -19,6 +19,10 @@ const Statistics = () => {
             ></Heading>
           </div>
         </div>
+
+        <div className="container w-11/12 mx-auto my-12">
+          <h2 className="font-bold text-xl">Statistics</h2>
+        </div>
       </div>
     );
 };

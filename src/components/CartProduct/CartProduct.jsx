@@ -12,6 +12,35 @@ const CartProduct = () => {
   const [totalCost, setTotalCost] = useState(0);
   const navigate = useNavigate();
 
+
+  const [sort, setSort] = useState("");
+
+    const handleSort = (sortType) => {
+      setSort(sortType);
+
+      if (sortType === "Price") {
+        const sortedPriceList = [...gadgets].sort(
+          (a, b) => b.price - a.price
+        );
+        setGadgets(sortedPriceList);
+      }
+
+      if (sortType === "Rating") {
+        const sortedPriceList = [...gadgets].sort(
+          (a, b) => b.rating - a.rating
+        );
+        setGadgets(sortedPriceList);
+      }
+      
+      if (sortType === "Popularity") {
+        const sortedPriceList = [...gadgets].sort(
+          (a, b) => b.popularity - a.popularity
+        );
+        setGadgets(sortedPriceList);
+      }
+    };
+
+
   useEffect(() => {
     const cartProduct = getAllCartProducts();
     setGadgets(cartProduct);
@@ -56,6 +85,27 @@ const CartProduct = () => {
         </div>
         <div className="flex items-center gap-4">
           <p className="font-bold text-xl">Total Cost: ${totalCost}</p>
+
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn m-1">
+              {sort ? `Sort by: ${sort}` : "Sort by"}
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+            >
+              <li onClick={() => handleSort("Price")}>
+                <a>Price</a>
+              </li>
+              <li onClick={() => handleSort("Rating")}>
+                <a>Rating</a>
+              </li>
+              <li onClick={() => handleSort("Popularity")}>
+                <a>Popularity</a>
+              </li>
+            </ul>
+          </div>
+
           <button
             onClick={handlePurchase}
             disabled={totalCost === 0}
@@ -89,6 +139,12 @@ const CartProduct = () => {
                 </p>
                 <p className="text-lg font-semibold text-gray-600">
                   Price: ${gadget.price}
+                </p>
+                <p className="text-lg font-semibold text-gray-600">
+                  Rating: {gadget.rating}
+                </p>
+                <p className="text-lg font-semibold text-gray-600">
+                  Popularity: {gadget.popularity}
                 </p>
               </div>
             </div>

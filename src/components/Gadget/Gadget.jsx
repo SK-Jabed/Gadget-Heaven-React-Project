@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 const Gadget = ({ gadget }) => {
     const { product_id, product_image, product_title, price } = gadget || {};
 
+    
+
     // const { pathname } = useLocation();
     // console.log(pathname);
     return (
       <div>
-        <div className="card shadow-xl p-6 bg-white">
+        <div className="card shadow-xl p-6 bg-white transition  hover:scale-105 overflow-hidden cursor-pointer">
           <figure className="rounded-2xl">
             <img
               className="h-[182px] w-[282px]"
@@ -29,7 +31,7 @@ const Gadget = ({ gadget }) => {
           </Link>
         </div>
 
-        {/* {pathname === "/cards/Watches" && <div>No Data</div>} */}
+        
       </div>
     );
 };
