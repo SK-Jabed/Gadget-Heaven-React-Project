@@ -6,6 +6,7 @@ import {
 } from "../../utility/localStorage";
 import { useNavigate } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
+import modalIcon from "../../assets/Group.png"
 
 const CartProduct = () => {
   const [gadgets, setGadgets] = useState([]);
@@ -87,7 +88,11 @@ const CartProduct = () => {
           <p className="font-bold text-xl">Total Cost: ${totalCost}</p>
 
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn m-1">
+            <div
+              tabIndex={0}
+              role="button"
+              className="px-8 py-3 rounded-full border-[#8332C5] bg-white border-2 text-[#9538E2] font-semibold"
+            >
               {sort ? `Sort by: ${sort}` : "Sort by"}
             </div>
             <ul
@@ -109,10 +114,8 @@ const CartProduct = () => {
           <button
             onClick={handlePurchase}
             disabled={totalCost === 0}
-            className={`px-7 py-[14px] rounded-full border-2 border-[#8332C5] text-white font-bold ${
-              totalCost === 0
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-violet-600"
+            className={`px-7 py-[14px] rounded-full text-white font-bold ${
+              totalCost === 0 ? "bg-gray-400" : "bg-violet-600"
             }`}
           >
             Purchase
@@ -128,7 +131,7 @@ const CartProduct = () => {
           >
             <div className="flex items-center gap-2">
               <img
-                className="w-28 h-28 border-1 p-1 rounded-2xl"
+                className="w-36 h-40 border-1 p-1 rounded-2xl"
                 src={gadget.product_image}
                 alt="Cart Product"
               />
@@ -150,7 +153,7 @@ const CartProduct = () => {
             </div>
             <button
               onClick={() => handleRemove(gadget.product_id)}
-              className="text-4xl text-red-400"
+              className="text-5xl text-red-500 mr-12"
             >
               <RxCrossCircled />
             </button>
@@ -160,11 +163,19 @@ const CartProduct = () => {
 
       {/* Modal */}
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Congratulations!</h3>
-          <p className="py-4">You have successfully purchased all products.</p>
+        <div className="modal-box flex flex-col container w-11/12 mx-auto justify-center items-center">
+          <img className="w-16 text-center" src={modalIcon} alt="" />
+          <h2 className="font-bold text-xl mt-6 pb-3 border-b-2">
+            Payment Successfully
+          </h2>
+          <p className="py-4 text-gray-500 font-semibold">
+            Thanks for purchasing
+          </p>
           <div className="modal-action">
-            <button className="btn" onClick={() => closeModalAndRedirect()}>
+            <button
+              className="btn w-[122px]"
+              onClick={() => closeModalAndRedirect()}
+            >
               Close
             </button>
           </div>

@@ -23,8 +23,8 @@ const GadgetCards = () => {
   return (
     <div>
       {gadgets.length === 0 ? (
-        <div className="flex items-center justify-center h-full">
-          <p className="text-xl font-semibold text-gray-500">
+        <div className="lg:flex items-start justify-start w-full">
+          <p className="text-4xl font-bold text-gray-500">
             No Data Available
           </p>
         </div>
@@ -33,13 +33,14 @@ const GadgetCards = () => {
           {gadgets.map((gadget) => (
             <Gadget key={gadget.product_id} gadget={gadget} />
           ))}
-        </div>
-      )}
         <div className="mt-6">     
-            <button className="btn btn-warning" onClick={() => navigate("/products")}>
+            
+        </div>
+        <button className="btn btn-warning" onClick={() => navigate("/products")}>
               View All
             </button>
         </div>
+      )}
     </div>
   );
 };

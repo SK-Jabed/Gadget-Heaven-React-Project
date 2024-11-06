@@ -56,15 +56,6 @@ const WishListProduct = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center gap-2">
-                <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] ">
-                  <button
-                    //   onClick={() => handleAddToCart(gadget)}
-                    className=" text-lg font-semibold"
-                  >
-                    Add To Cart
-                  </button>
-                  <AiOutlineShoppingCart className="text-2xl" />
-                </div>
                 <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2]">
                   <button
                     onClick={() => handleRemove(gadget.product_id)}

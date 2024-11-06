@@ -5,6 +5,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
 import { addToCart, addToWishList } from "../../utility/localStorage";
 import { Helmet } from "react-helmet-async";
+import { FaStar } from "react-icons/fa";
 
 const GadgetDetails = () => {
   const allGadgetsData = useLoaderData();
@@ -96,9 +97,16 @@ const GadgetDetails = () => {
               </ol>
             </div>
             <h2 className="text-lg font-bold mb-1 mt-3">Rating:</h2>
-            <button className="text-black font-semibold px-4 py-2 rounded-full bg-[#09080F10]">
-              {rating}
-            </button>
+            <div className="flex items-center gap-2">
+              <button className="text-black font-semibold px-4 py-2 rounded-full bg-[#09080F10]">
+                {rating}
+              </button>
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+            </div>
+
             <div className="flex items-center gap-4 mt-4">
               <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2] hover:border-2 hover:border-[#9538E2]">
                 <button
