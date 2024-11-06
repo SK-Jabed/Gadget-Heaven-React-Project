@@ -9,6 +9,7 @@ import CartProduct from "../components/CartProduct/CartProduct";
 import WishListProduct from "../components/WishListProduct/WishListProduct";
 import Products from "../pages/Products/Products";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 
@@ -16,7 +17,7 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <p>Error</p>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

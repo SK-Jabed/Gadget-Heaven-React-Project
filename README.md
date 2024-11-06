@@ -1,17 +1,17 @@
 # Project Name: Gadget Heaven
 
 
-## Live Website Link
+# Live Website Link
 Here is The Live Website Link of This Gadget Heaven Project:
 # [https://b10-assignment-8-gadget-heaven.netlify.app/](https://dream-11-ceicket-team-a07.netlify.app/)
 
 
-## Requirement Document Link
+# Requirement Document Link
 Here is The Requirement Document Link of This Gadget Heaven Project:
-# [file:///C:/Projects/B10-A8-gadget-heaven/Batch-10_Assignment-08.pdf](file:///C:/Projects/B10-A8-gadget-heaven/Batch-10_Assignment-08.pdf)
+# [https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf)
 
 
-## React Fundamentals Used in Gadget Heaven
+# React Fundamentals Used in Gadget Heaven
 1. **Components**  
    - Built reusable and composable components for different parts of the UI, such as the Navbar, ProductCard, Cart, and Wishlist.
 
@@ -51,7 +51,7 @@ Here is The Requirement Document Link of This Gadget Heaven Project:
 This list provides an overview of the fundamental React concepts applied in the Gadget Heaven project.
 
 
-### Data Handling and Management
+# Data Handling and Management
 In the Gadget Heaven project, **Local Storage** is used to handle and manage data. Local Storage allows us to save the user's cart and wishlist data on the client side, ensuring data persistence even if the user refreshes the page or closes and reopens the browser. By using Local Storage, we provide a seamless user experience, where the items added to the cart or wishlist are retained between sessions without requiring server-side storage.
 
 The usage of Local Storage involves:
@@ -59,7 +59,7 @@ The usage of Local Storage involves:
 - Loading data from Local Storage when the app initializes to restore the user's previous session state.
 
 
-### Key Features of Gadget Heaven
+# Key Features of Gadget Heaven
 1. **Dynamic Product Listings**  
    Displays a wide range of gadgets across multiple categories, such as phones, laptops, and accessories, with real-time data rendering.
 
