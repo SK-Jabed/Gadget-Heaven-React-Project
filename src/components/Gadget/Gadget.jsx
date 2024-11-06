@@ -19,7 +19,7 @@ const Gadget = ({ gadget }) => {
           <div className="border-b-2 pb-3 mt-8">
             <h2 className="text-xl font-semibold">{product_title}</h2>
             <p className="mt-3 text-base font-semibold text-gray-500">
-              By: {price}
+              Price: ${price}
             </p>
           </div>
           <Link to={`/gadget/${product_id}`} className="mt-4">

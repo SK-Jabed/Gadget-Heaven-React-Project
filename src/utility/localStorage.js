@@ -38,9 +38,17 @@ const removeCartProduct = (id) => {
     console.log(remainingProduct);
 
     localStorage.setItem("cartProduct", JSON.stringify(remainingProduct));
-    toast.success(`${id.product_title} Removed from Your Cart !!!`);
+    toast.success(`Product Removed from Your Cart !!!`);
 
 }
+
+
+// Clear all gadgets from Local Storage
+const clearCart = () => {
+    localStorage.setItem("cartProduct", JSON.stringify([]));
+
+};
+
 
 
 
@@ -73,10 +81,27 @@ const addToWishList = gadget => {
 }
 
 
+
+// Remove a gadget from local storage
+const removeWishListProduct = (id) => {
+    const wishListProduct = getAllWishListProducts();
+    const remainingProduct = wishListProduct.filter(
+      (product) => product.product_id != id
+    );
+    console.log(remainingProduct);
+
+    localStorage.setItem("wishListProduct", JSON.stringify(remainingProduct));
+    toast.success(`Product Removed from Your Wish List !!!`);
+
+}
+
+
 export {
   addToCart,
   getAllCartProducts,
   addToWishList,
   getAllWishListProducts,
   removeCartProduct,
+  removeWishListProduct,
+  clearCart,
 };

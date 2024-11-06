@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllWishListProducts } from "../../utility/localStorage";
+import { getAllWishListProducts, removeWishListProduct } from "../../utility/localStorage";
 import { RxCrossCircled } from "react-icons/rx";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
@@ -10,6 +10,15 @@ const WishListProduct = () => {
       const wishListProduct = getAllWishListProducts();
       setGadgets(wishListProduct);
     }, []);
+
+
+    const handleRemove = (id) => {
+      removeWishListProduct(id);
+      // Remove item from state as well
+      setGadgets((prevGadgets) =>
+        prevGadgets.filter((gadget) => gadget.product_id !== id)
+      );
+    };
 
 
     return (
@@ -58,7 +67,7 @@ const WishListProduct = () => {
                 </div>
                 <div className="flex items-center gap-2  py-3 px-6 bg-[#9538E2] text-white rounded-full hover:bg-white hover:text-[#9538E2]">
                   <button
-                    //   onClick={() => handleAddToCart(gadget)}
+                    onClick={() => handleRemove(gadget.product_id)}
                     className=" text-lg font-semibold"
                   >
                     Remove
