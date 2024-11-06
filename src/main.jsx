@@ -1,15 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import routes from './routes/Routes';
+import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
+import routes from "./routes/Routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={routes} />
-
+    <HelmetProvider>
+      {/* Wrap around RouterProvider */}
+      <RouterProvider router={routes} />
+    </HelmetProvider>
     <ToastContainer
       position="top-center"
       autoClose={2000}

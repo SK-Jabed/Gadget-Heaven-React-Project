@@ -4,6 +4,7 @@ import Heading from "../../components/Heading/Heading";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
 import { addToCart, addToWishList } from "../../utility/localStorage";
+import { Helmet } from "react-helmet-async";
 
 const GadgetDetails = () => {
   const allGadgetsData = useLoaderData();
@@ -39,6 +40,9 @@ const GadgetDetails = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Product Details | Gadget Heaven</title>
+      </Helmet>
       <div className=" bg-[#9538E2] pt-8 pb-60 w-full">
         <div className="flex flex-col justify-center items-center text-white mb-8">
           <Heading

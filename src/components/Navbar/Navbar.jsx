@@ -7,6 +7,16 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const isHomePage = pathname === "/" || pathname.startsWith("/cards");
 
+  // Function to apply active class
+  const getLinkClasses = (isActive) =>
+    `text-lg font-semibold hover:transition duration-300 ${
+      isActive
+        ? "text-rose-600" // Active styles: underline and blue color
+        : isHomePage
+        ? "text-white" // Homepage link style
+        : "text-black" // Other pages link style
+    }`;
+
   return (
     <div
       className={`container w-11/12 mx-auto  ${
@@ -32,7 +42,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className="text-xl hover:font-bold hover:transition duration-300"
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Home
               </NavLink>
@@ -40,7 +50,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/statistics"
-                className="text-xl text-primaryTextColor hover:transition duration-300 hover:font-bold"
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Statistics
               </NavLink>
@@ -48,7 +58,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/dashboard"
-                className="text-xl text-primaryTextColor hover:transition duration-300 hover:font-bold"
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Dashboard
               </NavLink>
@@ -75,9 +85,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className={`text-lg hover:font-semibold hover:transition duration-300 ${
-                  isHomePage ? "text-white" : "text-black"
-                }`}
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Home
               </NavLink>
@@ -85,9 +93,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/statistics"
-                className={`text-lg hover:font-semibold hover:transition duration-300 ${
-                  isHomePage ? "text-white" : "text-black"
-                }`}
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Statistics
               </NavLink>
@@ -95,9 +101,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/dashboard"
-                className={`text-lg hover:font-semibold hover:transition duration-300 ${
-                  isHomePage ? "text-white" : "text-black"
-                }`}
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Dashboard
               </NavLink>

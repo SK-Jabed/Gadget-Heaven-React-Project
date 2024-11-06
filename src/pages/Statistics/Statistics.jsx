@@ -1,10 +1,13 @@
 import Heading from "../../components/Heading/Heading";
+import { Helmet } from "react-helmet-async";
 
 
 const Statistics = () => {
     return (
       <div>
-        
+        <Helmet>
+          <title>Statistics | Gadget Heaven</title>
+        </Helmet>
 
         <div className=" bg-[#9538E2] py-8 w-full">
           <div className="flex flex-col justify-center items-center text-white mb-8">
