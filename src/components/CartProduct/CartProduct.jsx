@@ -81,7 +81,7 @@ const CartProduct = () => {
     <div>
       <div className="container w-11/12 mx-auto flex items-center justify-between mt-12">
         <div>
-          <h2 className="font-bold text-xl">Cart</h2>
+          <h2 className="font-bold text-2xl">Cart</h2>
         </div>
         <div className="flex items-center gap-4">
           <p className="font-bold text-xl">Total Cost: ${totalCost}</p>

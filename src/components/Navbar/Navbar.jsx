@@ -122,6 +122,14 @@ const Navbar = () => {
                 Dashboard
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => getLinkClasses(isActive)}
+              >
+                About Us
+              </NavLink>
+            </li>
           </ul>
         </div>
 

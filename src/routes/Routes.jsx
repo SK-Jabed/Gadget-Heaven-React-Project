@@ -8,6 +8,7 @@ import GadgetDetails from "../pages/GadgetDetails/GadgetDetails";
 import CartProduct from "../components/CartProduct/CartProduct";
 import WishListProduct from "../components/WishListProduct/WishListProduct";
 import Products from "../pages/Products/Products";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 
 
@@ -42,6 +43,7 @@ const routes = createBrowserRouter([
       {
         path: "/statistics",
         element: <Statistics></Statistics>,
+        loader: () => fetch("../gadgets.json"),
       },
       {
         path: "/dashboard",
@@ -62,6 +64,10 @@ const routes = createBrowserRouter([
         path: "/gadget/:product_id",
         element: <GadgetDetails></GadgetDetails>,
         loader: () => fetch("../gadgets.json"),
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>
       },
     ],
   },
