@@ -6,41 +6,35 @@ import {
 } from "../../utility/localStorage";
 import { useNavigate } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
-import modalIcon from "../../assets/Group.png"
+import modalIcon from "../../assets/Group.png";
 
 const CartProduct = () => {
   const [gadgets, setGadgets] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
   const navigate = useNavigate();
 
-
   const [sort, setSort] = useState("");
 
-    const handleSort = (sortType) => {
-      setSort(sortType);
+  const handleSort = (sortType) => {
+    setSort(sortType);
 
-      if (sortType === "Price") {
-        const sortedPriceList = [...gadgets].sort(
-          (a, b) => b.price - a.price
-        );
-        setGadgets(sortedPriceList);
-      }
+    if (sortType === "Price") {
+      const sortedPriceList = [...gadgets].sort((a, b) => b.price - a.price);
+      setGadgets(sortedPriceList);
+    }
 
-      if (sortType === "Rating") {
-        const sortedPriceList = [...gadgets].sort(
-          (a, b) => b.rating - a.rating
-        );
-        setGadgets(sortedPriceList);
-      }
-      
-      if (sortType === "Popularity") {
-        const sortedPriceList = [...gadgets].sort(
-          (a, b) => b.popularity - a.popularity
-        );
-        setGadgets(sortedPriceList);
-      }
-    };
+    if (sortType === "Rating") {
+      const sortedPriceList = [...gadgets].sort((a, b) => b.rating - a.rating);
+      setGadgets(sortedPriceList);
+    }
 
+    if (sortType === "Popularity") {
+      const sortedPriceList = [...gadgets].sort(
+        (a, b) => b.popularity - a.popularity
+      );
+      setGadgets(sortedPriceList);
+    }
+  };
 
   useEffect(() => {
     const cartProduct = getAllCartProducts();
